@@ -1,0 +1,93 @@
+body {
+  /* Gradient background */
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), #3d3c88);
+  /* Optional: Ensure the gradient covers the full viewport */
+  min-height: 100vh; /* Ensures full height on all screens */
+  margin: 0; /* Removes default margin */
+  color: #fff; /* Change text color to white for better contrast */
+}
+
+.wallpaper-container {
+  padding: 2rem;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.wallpaper-container header {
+  margin-bottom: 2rem;
+}
+
+.wallpaper-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.wallpaper-container h3 {
+  margin-bottom: -1rem;
+}
+.wallpaper-container p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  color: #000000;
+}
+
+.wallpaper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.wallpaper-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.wallpaper-item .imgg {
+  width: 100%;
+  height: 155%;
+  overflow: hidden;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.wallpaper-item .imgg iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.wallpaper-item:hover .imgg {
+  transform: scale(1.05);
+}
+
+/* Styling for the download button */
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s;
+}
+
+/* This ensures only the button for the hovered image appears */
+.wallpaper-item:hover .download-button {
+  opacity: 1; /* Show when hovering */
+}
+
+
